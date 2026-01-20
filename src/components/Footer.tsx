@@ -55,13 +55,15 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-muted-foreground text-sm">
                 <Mail className="w-4 h-4 text-primary" />
-                <a href="mailto:info@promptwalls.com" className="hover:text-primary transition-colors">
-                  info@promptwalls.com
+                <a href="mailto:business@popsand.com" className="hover:text-primary transition-colors">
+                  business@popsand.com
                 </a>
               </li>
               <li className="flex items-center gap-2 text-muted-foreground text-sm">
-                <MapPin className="w-4 h-4 text-primary" />
-                <span>Popsand Robotics Co. Ltd.</span>
+                <Phone className="w-4 h-4 text-primary" />
+                <a href="tel:+85235200890" className="hover:text-primary transition-colors">
+                  (852) 3520 0890
+                </a>
               </li>
             </ul>
           </div>
