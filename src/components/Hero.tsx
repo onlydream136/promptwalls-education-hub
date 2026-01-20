@@ -1,17 +1,34 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Lock, Server, Zap } from "lucide-react";
+import heroBackground from "@/assets/hero-background.jpg";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
-      {/* Background effects */}
-      <div className="absolute inset-0 bg-gradient-radial opacity-50" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse-glow" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/5 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '1.5s' }} />
+      {/* Background image */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `url(${heroBackground})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
+      
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 z-0 bg-background/70" />
+      
+      {/* Additional gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-radial opacity-60 z-0" />
+      
+      {/* Animated glow accents */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse-glow z-0" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/5 rounded-full blur-3xl animate-pulse-glow z-0" style={{ animationDelay: '1.5s' }} />
       
       {/* Grid pattern overlay */}
       <div 
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.03] z-0"
         style={{
           backgroundImage: `linear-gradient(hsl(var(--primary) / 0.3) 1px, transparent 1px),
                            linear-gradient(90deg, hsl(var(--primary) / 0.3) 1px, transparent 1px)`,
@@ -54,21 +71,21 @@ const Hero = () => {
           
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 mt-20 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.6s' }}>
-            <div className="text-center">
+            <div className="text-center glass rounded-xl p-4">
               <div className="flex items-center justify-center gap-2 mb-2">
                 <Lock className="w-5 h-5 text-primary" />
                 <span className="font-display text-3xl font-bold text-foreground">100%</span>
               </div>
               <p className="text-sm text-muted-foreground">Private On-Premise</p>
             </div>
-            <div className="text-center">
+            <div className="text-center glass rounded-xl p-4">
               <div className="flex items-center justify-center gap-2 mb-2">
                 <Zap className="w-5 h-5 text-primary" />
                 <span className="font-display text-3xl font-bold text-foreground">3000%</span>
               </div>
               <p className="text-sm text-muted-foreground">Faster Math Processing</p>
             </div>
-            <div className="text-center">
+            <div className="text-center glass rounded-xl p-4">
               <div className="flex items-center justify-center gap-2 mb-2">
                 <Server className="w-5 h-5 text-primary" />
                 <span className="font-display text-3xl font-bold text-foreground">Zero</span>
@@ -80,7 +97,7 @@ const Hero = () => {
       </div>
       
       {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
     </section>
   );
 };
