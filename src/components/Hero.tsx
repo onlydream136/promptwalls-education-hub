@@ -46,11 +46,13 @@ const Hero = () => {
           
           {/* Main heading */}
           <h1 className="font-display text-5xl md:text-7xl font-bold leading-tight mb-6 animate-slide-up">
-            <span className="text-foreground">Safe, Private, & Powerful</span>
+            <span className="text-gradient">Private LLM Server</span>
             <br />
-            <span className="text-gradient">AI Infrastructure</span>
+            <span className="text-foreground">with</span>
+            {" "}
+            <span className="text-gradient">Content Firewall</span>
             <br />
-            <span className="text-foreground">for Education</span>
+            <span className="text-foreground">for Schools</span>
           </h1>
           
           {/* Subheadline */}
