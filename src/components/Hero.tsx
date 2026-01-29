@@ -7,7 +7,7 @@ const Hero = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+    <section className="relative min-h-[70vh] md:min-h-[85vh] flex items-center justify-center pt-20 pb-16 md:pt-24 md:pb-20 overflow-hidden">
       {/* Background image */}
       <div 
         className="absolute inset-0 z-0"
@@ -85,7 +85,7 @@ const Hero = () => {
           </div>
           
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 mt-20 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          <div className="grid grid-cols-3 gap-4 md:gap-8 mt-12 md:mt-20 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.6s' }}>
             <div className="text-center glass rounded-xl p-4">
               <div className="flex items-center justify-center gap-2 mb-2">
                 <Lock className="w-5 h-5 text-primary" />
@@ -118,7 +118,7 @@ const Hero = () => {
       </div>
       
       {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
+      <div className="absolute bottom-0 left-0 right-0 h-16 md:h-24 bg-gradient-to-t from-background to-transparent z-10" />
     </section>
   );
 };

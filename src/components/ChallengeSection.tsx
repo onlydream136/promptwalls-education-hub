@@ -5,7 +5,7 @@ const ChallengeSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="py-24 relative">
+    <section className="py-12 md:py-24 relative">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="glass rounded-2xl p-8 md:p-12 border-gradient relative overflow-hidden">
