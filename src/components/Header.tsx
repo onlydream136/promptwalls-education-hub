@@ -1,7 +1,11 @@
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { Shield } from "lucide-react";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Header = () => {
+  const { t } = useLanguage();
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass">
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
@@ -13,20 +17,23 @@ const Header = () => {
         </div>
         
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
-            Features
+          <a href="#hardware" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
+            {t('硬體方案', 'Hardware')}
           </a>
-          <a href="#firewall" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
-            Content Firewall
+          <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
+            {t('核心功能', 'Features')}
           </a>
           <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
-            Contact
+            {t('聯絡我們', 'Contact')}
           </a>
         </nav>
         
-        <Button variant="hero" size="sm">
-          Get Started
-        </Button>
+        <div className="flex items-center gap-3">
+          <LanguageSwitcher />
+          <Button variant="hero" size="sm" asChild>
+            <a href="#contact">{t('立即開始', 'Get Started')}</a>
+          </Button>
+        </div>
       </div>
     </header>
   );

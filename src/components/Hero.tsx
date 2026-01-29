@@ -1,8 +1,11 @@
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Lock, Server, Zap } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 
 const Hero = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
       {/* Background image */}
@@ -41,35 +44,43 @@ const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-gradient mb-8 animate-fade-in">
             <Lock className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-muted-foreground">A solution by Popsand Robotics Co. Ltd.</span>
+            <span className="text-sm font-medium text-muted-foreground">
+              {t('由 Popsand Robotics Co. Ltd. 榮譽出品', 'A solution by Popsand Robotics Co. Ltd.')}
+            </span>
           </div>
           
           {/* Main heading */}
           <h1 className="font-display text-5xl md:text-7xl font-bold leading-tight mb-6 animate-slide-up">
-            <span className="text-gradient">Private LLM Server</span>
+            <span className="text-gradient">
+              {t('校園私有 AI 伺服器', 'Private AI Server')}
+            </span>
             <br />
-            <span className="text-foreground">with</span>
-            {" "}
-            <span className="text-gradient">Content Firewall</span>
-            <br />
-            <span className="text-foreground">for Schools</span>
+            <span className="text-foreground">
+              {t('', 'for ')}
+            </span>
+            <span className="text-gradient">
+              {t('', 'Schools')}
+            </span>
           </h1>
           
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            Unlock the Power of AI without Compromising Student Privacy.
+            {t(
+              '出卷．改卷．STEM．行政．Workflow',
+              'Exam Generation · Grading · STEM · Admin · Workflow'
+            )}
           </p>
           
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up" style={{ animationDelay: '0.4s' }}>
             <Button variant="hero" size="xl" asChild>
               <a href="#contact">
-                Request a Demo
+                {t('預約演示', 'Request a Demo')}
                 <ArrowRight className="w-5 h-5" />
               </a>
             </Button>
             <Button variant="heroOutline" size="xl" asChild>
-              <a href="#features">Learn More</a>
+              <a href="#features">{t('了解更多', 'Learn More')}</a>
             </Button>
           </div>
           
@@ -80,21 +91,27 @@ const Hero = () => {
                 <Lock className="w-5 h-5 text-primary" />
                 <span className="font-display text-3xl font-bold text-foreground">100%</span>
               </div>
-              <p className="text-sm text-muted-foreground">Private On-Premise</p>
+              <p className="text-sm text-muted-foreground">
+                {t('私有化架構', 'Private On-Premise')}
+              </p>
             </div>
             <div className="text-center glass rounded-xl p-4">
               <div className="flex items-center justify-center gap-2 mb-2">
                 <Zap className="w-5 h-5 text-primary" />
                 <span className="font-display text-3xl font-bold text-foreground">3000%</span>
               </div>
-              <p className="text-sm text-muted-foreground">Faster Math Processing</p>
+              <p className="text-sm text-muted-foreground">
+                {t('數學運算加速', 'Faster Math Processing')}
+              </p>
             </div>
             <div className="text-center glass rounded-xl p-4">
               <div className="flex items-center justify-center gap-2 mb-2">
                 <Server className="w-5 h-5 text-primary" />
-                <span className="font-display text-3xl font-bold text-foreground">Zero</span>
+                <span className="font-display text-3xl font-bold text-foreground">{t('零', 'Zero')}</span>
               </div>
-              <p className="text-sm text-muted-foreground">Data Leaves Campus</p>
+              <p className="text-sm text-muted-foreground">
+                {t('數據離開校園', 'Data Leaves Campus')}
+              </p>
             </div>
           </div>
         </div>
