@@ -9,9 +9,9 @@ const Login = () => {
 
   // Configure these URLs as needed
   const loginLinks = {
-    schoolAI: "#", // Replace with actual URL
-    agent: "#",    // Replace with actual URL
-    notebook: "#", // Replace with actual URL
+    schoolAI: "http://voogpt.com:9000",
+    agent: "http://voogpt.com:9003",
+    notebook: "http://voogpt.com:9001",
   };
 
   const loginOptions = [
