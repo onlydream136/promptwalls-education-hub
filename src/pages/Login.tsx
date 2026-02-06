@@ -11,7 +11,7 @@ const Login = () => {
   const loginLinks = {
     schoolAI: "http://voogpt.com:9001",
     agent: "http://voogpt.com:9003",
-    notebook: "http://voogpt.com:9000",
+    notebook: "http://voogpt.com:9002",
   };
 
   const loginOptions = [
