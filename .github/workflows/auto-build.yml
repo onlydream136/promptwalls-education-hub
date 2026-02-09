@@ -1,0 +1,32 @@
+name: Auto Build Dist
+
+on:
+  workflow_dispatch:      # ⭐ 核心：只保留手动触发开关
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write     # 必须有写权限，否则机器人没法提交打包后的文件
+      
+    steps:
+      - name: 1. 检出代码
+        uses: actions/checkout@v4
+
+      - name: 2. 安装 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 3. 强制安装依赖
+        run: npm install --force
+
+      - name: 4. 执行打包
+        run: npm run build
+
+      - name: 5. 自动把打包好的 dist 文件夹提交到仓库
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: 手动构建打包 [skip ci]"
+          file_pattern: 'dist/*'
