@@ -36,6 +36,13 @@ const Login = () => {
       description: t("私有筆記本 LLM", "Private Notebook LLM"),
       url: loginLinks.notebook,
     },
+    {
+      id: "firewall",
+      icon: Shield,
+      title: t("Firewall", "Firewall"),
+      description: t("內容防火牆", "Content Firewall"),
+      url: loginLinks.firewall,
+    },
   ];
 
   return (
