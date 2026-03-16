@@ -1,7 +1,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { GraduationCap, Bot, BookOpen, ArrowLeft } from "lucide-react";
+import { GraduationCap, Bot, BookOpen, ArrowLeft, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Login = () => {
