@@ -1,7 +1,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { GraduationCap, Bot, BookOpen, ArrowLeft } from "lucide-react";
+import { GraduationCap, Bot, BookOpen, ArrowLeft, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Login = () => {
@@ -9,9 +9,10 @@ const Login = () => {
 
   // Configure these URLs as needed
   const loginLinks = {
-    schoolAI: "http://voogpt.com:9001",
+    schoolAI: "http://voogpt.com:9000",
     agent: "http://voogpt.com:9003",
-    notebook: "http://voogpt.com:9002",
+    notebook: "http://voogpt.com:9001",
+    firewall: "http://voogpt.com:9004",
   };
 
   const loginOptions = [
@@ -35,6 +36,13 @@ const Login = () => {
       title: t("NoteBook", "NoteBook"),
       description: t("私有筆記本 LLM", "Private Notebook LLM"),
       url: loginLinks.notebook,
+    },
+    {
+      id: "firewall",
+      icon: Shield,
+      title: t("Firewall", "Firewall"),
+      description: t("內容防火牆", "Content Firewall"),
+      url: loginLinks.firewall,
     },
   ];
 
